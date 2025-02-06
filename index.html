@@ -18,8 +18,8 @@
 
   <script type="text/javascript">
 
-    var cheeseX;
-    var cheeseY;
+    var cheeseX; 
+    var cheeseY; <!-- Check cheese location -->
 
     function getRandom(min, max) {
       let range = max - min;
@@ -39,7 +39,7 @@
           newButton.setAttribute("y", y);
           newButton.textContent = "X";
           newButton.addEventListener("click", buttonClickedHandler);
-          container.appendChild(newButton);
+          container.appendChild(newButton); <!-- Loads buttons and places cheese -->
         }
         let lineBreak = document.createElement("br");
         container.appendChild(lineBreak);
@@ -50,13 +50,13 @@
 
     }
 
-    function buttonClickedHandler(event) {
+    function buttonClickedHandler(event) { <!-- Results on position of selected block to the cheese -->
       let button = event.target;
       let x = button.getAttribute("x");
       let y = button.getAttribute("y");
       if (x == cheeseX && y == cheeseY) {
         button.className = "cheeseButton";
-        alert("Well done! Reload the page to play again");
+        alert("Well done! Reload the page to play again"); <!-- notifcation when cheese is found -->
       }
       else {
         let dx = x - cheeseX;
