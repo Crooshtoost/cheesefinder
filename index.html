@@ -8,7 +8,7 @@
 </head>
 <h1>  &#129472;  Cheese Finder</h1>
 
-<body onload="playGame(8,8);"> <!-- Modify to 8x8 grid -->
+<body onload="playGame(8,8);"> // Modify to 8x8 grid //
 
   <p>Take it in turns to play. Click the buttons to sniff for cheese. </p>
   <p>Clicked buttons show you how far away the cheese is.</p>
@@ -19,7 +19,7 @@
   <script type="text/javascript">
 
     var cheeseX; 
-    var cheeseY; <!-- Check cheese location -->
+    var cheeseY; // Check cheese location //
 
     function getRandom(min, max) {
       let range = max - min;
@@ -50,13 +50,13 @@
 
     }
 
-    function buttonClickedHandler(event) { <!-- Results on position of selected block to the cheese -->
+    function buttonClickedHandler(event) { // Results on position of selected block to the cheese //
       let button = event.target;
       let x = button.getAttribute("x");
       let y = button.getAttribute("y");
       if (x == cheeseX && y == cheeseY) {
         button.className = "cheeseButton";
-        alert("Well done! Reload the page to play again"); <!-- Notifcation when cheese is found -->
+        alert("Well done! Reload the page to play again"); // Notifcation when cheese is found //
       }
       else {
         let dx = x - cheeseX;
