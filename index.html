@@ -18,53 +18,53 @@
 
   <script type="text/javascript">
 
-    var cheeseX; 
+    var cheeseX; // Check cheese location //
     var cheeseY; // Check cheese location //
 
     function getRandom(min, max) {
       let range = max - min;
       let result = Math.floor(Math.random() * (range)) + min;
       return result;
-    }
+    } // Returning Cheese location //
 
     function playGame(width, height) {
 
       let container = document.getElementById("buttonPar");
 
-      for (let y = 0; y < height; y++) {
-        for (let x = 0; x < width; x++) {
-          let newButton = document.createElement("button");
+      for (let y = 0; y < height; y++) { // comment //
+        for (let x = 0; x < width; x++) { // comment //
+          let newButton = document.createElement("button"); // comment //
           newButton.className = "upButton";
-          newButton.setAttribute("x", x);
-          newButton.setAttribute("y", y);
-          newButton.textContent = "X";
-          newButton.addEventListener("click", buttonClickedHandler);
-          container.appendChild(newButton); <!-- Loads buttons and places cheese -->
+          newButton.setAttribute("x", x); // comment //
+          newButton.setAttribute("y", y); // comment //
+          newButton.textContent = "X"; // comment //
+          newButton.addEventListener("click", buttonClickedHandler); // comment //
+          container.appendChild(newButton); // Check cheese location //
         }
-        let lineBreak = document.createElement("br");
-        container.appendChild(lineBreak);
+        let lineBreak = document.createElement("br"); // comment //
+        container.appendChild(lineBreak); // comment //
       }
 
-      cheeseX = getRandom(0, width);
-      cheeseY = getRandom(0, height);
+      cheeseX = getRandom(0, width); // comment //
+      cheeseY = getRandom(0, height); // comment //
 
     }
 
     function buttonClickedHandler(event) { // Results on position of selected block to the cheese //
-      let button = event.target;
-      let x = button.getAttribute("x");
-      let y = button.getAttribute("y");
+      let button = event.target; // comment //
+      let x = button.getAttribute("x"); // comment //
+      let y = button.getAttribute("y"); // comment //
       if (x == cheeseX && y == cheeseY) {
         button.className = "cheeseButton";
-        alert("Well done! Reload the page to play again"); // Notifcation when cheese is found //
-      }
+        alert("Well done! Reload the page to play again");
+      } // Confirming you found the cheese! //
       else {
         let dx = x - cheeseX;
         let dy = y - cheeseY;
         let distance = Math.round(Math.sqrt((dx * dx) + (dy * dy)));
         button.textContent = distance;
         button.className = "downButton";
-      }
+      } // comment //
     }
   </script>
 </body>
